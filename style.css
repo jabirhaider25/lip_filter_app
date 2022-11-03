@@ -1,0 +1,21 @@
+.btn-info:hover{
+    background-color:rgb(153, 80, 51);
+    }
+    h3{
+    background-color: aqua;
+    width: 250px; 
+    border-radius: 30;
+    }
+    canvas{
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    
+    }
+    html{
+    background-image:"background.jpg ";
+    }
+    @keyframes example {
+    from {box-shadow: 1px 1px 38px red;}
+    to {box-shadow: 1px 1px 38px red;}
+    }
