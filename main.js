@@ -1,3 +1,5 @@
+noseX = 0;
+noseY = 0;
 function take_snapshot()
 {
 save('myFilterimage.png');
@@ -14,9 +16,10 @@ poseNet.on('pose',gotPoses);
 }
 function draw() {
 image(video, 0, 0, 300, 300);
+image(lip_stick,noseX,noseY,30,30)
 }
 function preload() {
-
+lip_stick = loadImage('https://i.postimg.cc/TYWf79BZ/image-processing20210615-6157-hwoqzg.png');
 }
 
 function modelLoaded() {
@@ -26,8 +29,10 @@ function gotPoses(results) {
 if (results.length > 0);
 {
 console.log(results)
-console.log("lip_x =" + results[0].pose.lip.x);
-console.log("lip_y =" + results[0].pose.lip.y);
+noseX = results[0].pose.nose.x;
+noseY = results[0].pose.nose.y;
+console.log("noseX = "+noseX);
+console.log("noseY = "+noseY);
 }
 }
 
